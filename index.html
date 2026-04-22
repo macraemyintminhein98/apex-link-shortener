@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX Link Shortener</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f4f7f6; color: #333; }
+        .container { max-width: 600px; margin: 40px auto; padding: 30px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 2.2em; }
+        .input-group { margin-bottom: 25px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        input[type="url"], input[type="text"] { width: calc(100% - 20px); padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em; }
+        button { width: 100%; padding: 14px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer; transition: background-color 0.3s ease; }
+        button:hover { background-color: #0056b3; }
+        #result { margin-top: 25px; text-align: center; word-wrap: break-word; }
+        #result a { color: #28a745; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .price { text-align: center; margin-top: 30px; font-size: 1.5em; color: #e74c3c; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>APEX Link Shortener</h1>
+        <p class="price">Only $9.99 - One-time payment!</p>
+        <div class="input-group">
+            <label for="longUrl">Long URL:</label>
+            <input type="url" id="longUrl" placeholder="https://example.com/very/long/url" required>
+        </div>
+        <div class="input-group">
+            <label for="customSlug">Custom Slug (optional):</label>
+            <input type="text" id="customSlug" placeholder="my-awesome-link">
+        </div>
+        <button onclick="shortenLink()">Shorten URL</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        async function shortenLink() {
+            const longUrl = document.getElementById('longUrl').value;
+            const customSlug = document.getElementById('customSlug').value;
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Shortening...';
+
+            try {
+                // This would be replaced by an actual API call to your Vercel backend
+                // For demo purposes, we'll simulate a short link.
+                if (!longUrl) {
+                    resultDiv.innerHTML = '<span style="color: red;">Please enter a long URL.</span>';
+                    return;
+                }
+                const shortLink = customSlug ? `https://apex.link/${customSlug}` : `https://apex.link/${Math.random().toString(36).substring(2, 8)}`;
+                resultDiv.innerHTML = `Your short link: <a href="${shortLink}" target="_blank">${shortLink}</a>`;
+            } catch (error) {
+                resultDiv.innerHTML = `<span style="color: red;">Error: ${error.message}</span>`;
+            }
+        }
+    </script>
+</body>
+</html>
