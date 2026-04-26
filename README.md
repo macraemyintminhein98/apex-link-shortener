@@ -1,23 +1,12 @@
-# ApexLink: Shorten & Track
+# Apex Link Shortener
 
-ApexLink is a simple, premium URL shortener designed for individuals and businesses who need custom, trackable links without the clutter of free services.
+**Shorten. Track. Grow.**
 
-**Key Features:**
-- Create short, custom URLs.
-- Track total clicks for each link.
-- View the last time a link was clicked.
-- Ad-free, clean user experience.
+Apex Link Shortener is a dead-simple, blazing-fast link shortener with basic click analytics. Ideal for small businesses, content creators, and indie hackers who need quick tracking without the overhead of enterprise solutions. Features include:
 
-**Getting Started:**
-1. Enter your long URL.
-2. (Optional) Add a custom slug for branding.
-3. Get your short link and start sharing!
+- Blazing-fast link shortening
+- Basic click analytics (counts, referrers)
+- Option for custom short domains
+- Easy-to-use dashboard to monitor performance
 
-**Premium Benefits:**
-Purchase a bundle of links to unlock full tracking features and create more custom URLs for your campaigns.
-
-**Tech Stack:**
-- **Frontend:** Next.js (or similar) with Tailwind CSS
-- **Backend:** Serverless Functions (Vercel Edge Functions)
-- **Database:** Edge-compatible database (e.g., PlanetScale, Supabase)
-- **Payments:** Stripe Checkout
+Get started for a one-time payment of $9.99!
